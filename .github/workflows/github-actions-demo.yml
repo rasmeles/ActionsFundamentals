@@ -1,0 +1,19 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches: main
+    paths-ignore: .github/**
+  pull_request:
+    branches: main
+  schedule:
+    - cron: '15 6 * * 0'
+  workflow_dispatch:
+  
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - run: |
+          echo "triggered by ${{ github.event_name }}"
+          echo " my branch is "${{ github.event_name }}"
