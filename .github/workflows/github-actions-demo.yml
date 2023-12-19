@@ -17,3 +17,4 @@ jobs:
       - run: |
           echo "triggered by ${{ github.event_name }}"
           echo " my branch is "${{ github.event_name }}"
+          tree
